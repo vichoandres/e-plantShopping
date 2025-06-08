@@ -306,17 +306,18 @@ const handlePlantsClick = (e) => {
                 <img className="product-image" src={plant.image} alt={plant.name} />
                 <div className="product-title">{plant.description}</div>
                 <div className="product-cost">{plant.cost}</div>
-                <button
-                  className={
-                    addedToCart[`${categoryIndex}-${plantIndex}`]
-                      ? "product-button btn-disabled"
-                      : "product-button"
-                  }
-                  onClick={() => handleAddToCart(categoryIndex, plantIndex, plant)}
-                  disabled={addedToCart[`${categoryIndex}-${plantIndex}`]}
-                >
-                  Add to Cart
-                </button>
+            <button
+            className={
+                addedToCart[`${categoryIndex}-${plantIndex}`]
+                ? "product-button btn-disabled"
+                : "product-button"
+            }
+            onClick={() => handleAddToCart(categoryIndex, plantIndex, plant)}
+            disabled={addedToCart[`${categoryIndex}-${plantIndex}`]}
+            >
+            {addedToCart[`${categoryIndex}-${plantIndex}`] ? "Added to Cart" : "Add to Cart"}
+            </button>
+
               </div>
             ))}
           </div>
